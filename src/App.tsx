@@ -7,10 +7,15 @@ function App() {
     <>
       <Header />
       <Hero />
-      <main>
+
+      <main className="max-w-6xl mx-auto px-6">
         <section className="h-screen flex items-center justify-center">
-          <h1 className="text-5xl font-serif">
-            Welcome to Cousins
+          <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl text-cream leading-tight">
+            Great Food.
+            <br />
+            Friendly Service.
+            <br />
+            Good Company.
           </h1>
         </section>
       </main>
@@ -19,5 +24,6 @@ function App() {
 }
 
 export default App;
+
 
 
