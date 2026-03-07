@@ -16,7 +16,7 @@ body,
 }
 
 /* Optional: set a global background + text color */
+/* index.css */
 body {
-  background-color: #242424; /* dark pub background */
-  color: rgba(255, 255, 255, 0.87);
+  @apply bg-[#1F2A24] text-[#E8DFC8];
 }
