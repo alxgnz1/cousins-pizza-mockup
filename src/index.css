@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 /* -------------------------------------------------
    Global reset — remove Vite defaults completely
 -------------------------------------------------- */
@@ -15,8 +16,37 @@ body,
   padding: 0;
 }
 
-/* Optional: set a global background + text color */
-/* index.css */
+/* -------------------------------------------------
+   Global styles
+-------------------------------------------------- */
+
 body {
   @apply bg-[#1F2A24] text-[#E8DFC8];
+}
+
+
+/* -------------------------------------------------
+   Navigation link component
+-------------------------------------------------- */
+
+@layer components {
+  .nav-link {
+    @apply relative inline-block transition-colors duration-300;
+    letter-spacing: 0.08em;
+  }
+
+  .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0;
+    height: 2px;
+    background-color: #E8DFC8;
+    transition: width 0.3s ease;
+  }
+
+  .nav-link:hover::after {
+    width: 100%;
+  }
 }

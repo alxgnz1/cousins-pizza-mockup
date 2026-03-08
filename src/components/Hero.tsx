@@ -1,4 +1,4 @@
-import heroImage from "../assets/images/hero/cousins-outdoor-img.jpg";
+import heroImage from "../assets/images/hero/bar2.jpg";
 import logo from "../assets/images/hero/cousins-pizza-logo.png"
 
 export default function Hero() {
@@ -6,7 +6,7 @@ export default function Hero() {
     <section className="relative h-[60vh] md:h-[75vh] min-h-[500px] w-screen overflow-hidden">
       <div
         className="absolute inset-0 bg-cover bg-[position:center_35%]"
-      //style={{ backgroundImage: `url(${heroImage})` }}
+      style={{ backgroundImage: `url(${heroImage})` }}
       />
 
       <div className="absolute inset-0 bg-black/55" />
