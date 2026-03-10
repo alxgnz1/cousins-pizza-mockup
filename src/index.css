@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -21,7 +23,7 @@ body,
 -------------------------------------------------- */
 
 body {
-  @apply bg-[#1F2A24] text-[#E8DFC8];
+  @apply bg-[#E8DFC8] text-[#E8DFC8];
 }
 
 
@@ -31,9 +33,10 @@ body {
 
 @layer components {
   .nav-link {
-    @apply relative inline-block transition-colors duration-300;
-    letter-spacing: 0.08em;
-  }
+  @apply relative inline-block transition-colors duration-300;
+  letter-spacing: 0.08em;
+  @apply font-tavern font-semibold;
+}
 
   .nav-link::after {
     content: "";

@@ -1,21 +1,29 @@
-import logo from "../assets/images/hero/cousins_logo3.png";
+import logo from "../assets/images/hero/cousins-logo.png";
 
 export default function Header() {
     return (
-        <header className="sticky top-0 z-50 bg-[#5A1E1E] border-b border-black/10">
+        <header className="sticky top-0 z-50 bg-[#5A1E1E]/90 border-b border-black/10">
 
-            <div className="max-w-[1800px] mx-auto px-12 h-20 flex items-center justify-between">
-                <img
-                    src={logo}
-                    alt="Cousins Pizza Pub"
-                    className="h-28 md:h-32 w-auto"
-                />
+            <div className="max-w-[1200px] mx-auto px-14 h-24 grid grid-cols-3 items-start">
 
-                <nav className="hidden md:flex gap-12 text-sm uppercase tracking-widest text-[#E8DFC8]">
-                    <a href="#menu" className="hover:text-pubRed">Menu</a>
-                    <a href="#events" className="hover:text-pubRed">Events</a>
-                    <a href="#gallery" className="hover:text-pubRed">Gallery</a>
-                    <a href="#contact" className="hover:text-pubRed">Contact</a>
+                {/* Left Navigation */}
+                <nav className="flex items-center gap-14 justify-self-center text-lg uppercase tracking-[0.25em] text-[#E8DFC8] mt-10">
+                    <a href="#menu" className="nav-link hover:text-pubRed">Menu</a>
+                    <a href="#events" className="nav-link hover:text-pubRed">Events</a>
+                </nav>
+
+                <div className="flex justify-center">
+                    <img
+                        src={logo}
+                        alt="Cousins Pizza Pub"
+                        className="h-48 w-auto -mt-8 drop-shadow-xl"
+                    />
+                </div>
+
+                 {/* Right Navigation */}
+                <nav className="flex items-center gap-14 justify-self-center text-lg uppercase tracking-[0.25em] text-[#E8DFC8] mt-10">
+                    <a href="#gallery" className="nav-link hover:text-pubRed">About</a>
+                    <a href="#contact" className="nav-link hover:text-pubRed">Contact</a>
                 </nav>
             </div>
         </header>
