@@ -1,31 +1,49 @@
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 import logo from "../assets/images/hero/cousins-logo.png";
 
 export default function Header() {
-    return (
-        <header className="sticky top-0 z-50 bg-[#5A1E1E]/90 border-b border-black/10">
+  const [menuOpen, setMenuOpen] = useState(false);
+  return (
+    <header className="sticky top-0 z-50 bg-[#5A1E1E]/90 border-b border-black/10">
+      {/* ------------- DESKTOP NAV ------------ */}
+      <nav className="hidden md:flex items-center justify-center gap-16 h-28 text-cream font-medium tracking-wider">
+        <a className="hover:text-[#E8DFC8] transition">MENU</a>
+        <a className="hover:text-[#E8DFC8] transition">EVENTS</a>
 
-            <div className="max-w-[1200px] mx-auto px-14 h-24 grid grid-cols-3 items-start">
+        <img
+          src={logo}
+          alt="Cousins Pizza Pub"
+          className="h-44 w-auto md:mt-4"
+        />
 
-                {/* Left Navigation */}
-                <nav className="flex items-center gap-14 justify-self-center text-lg uppercase tracking-[0.25em] text-[#E8DFC8] mt-10">
-                    <a href="#menu" className="nav-link hover:text-pubRed">Menu</a>
-                    <a href="#events" className="nav-link hover:text-pubRed">Events</a>
-                </nav>
+        <a className="hover:text-[#E8DFC8] transition">ABOUT</a>
+        <a className="hover:text-[#E8DFC8] transition">CONTACT</a>
+      </nav>
 
-                <div className="flex justify-center">
-                    <img
-                        src={logo}
-                        alt="Cousins Pizza Pub"
-                        className="h-48 w-auto -mt-8 drop-shadow-xl"
-                    />
-                </div>
+      {/* ------------- MOBILE NAV------------ */}
+      <nav className="flex md:hidden items-center justify-between px-6 h-24">
+        <button onClick={() => setMenuOpen(!menuOpen)} className="text-cream">
+          {menuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
 
-                 {/* Right Navigation */}
-                <nav className="flex items-center gap-14 justify-self-center text-lg uppercase tracking-[0.25em] text-[#E8DFC8] mt-10">
-                    <a href="#gallery" className="nav-link hover:text-pubRed">About</a>
-                    <a href="#contact" className="nav-link hover:text-pubRed">Contact</a>
-                </nav>
-            </div>
-        </header>
-    );
+        <img src={logo} alt="Cousins Pizza Pub" className="h-28" />
+
+        {/* spacer to balance hamburger */}
+        <div className="w-7"></div>
+      </nav>
+
+      {/* Mobile Menu Button */}
+      {menuOpen && (
+        <div className="md:hidden bg-[#E8DFC8]-900 border-t border-black/30">
+          <ul className="flex flex-col text-center text-cream text-lg">
+            <li className="py-4 border-b border-black/20">MENU</li>
+            <li className="py-4 border-b border-black/20">EVENTS</li>
+            <li className="py-4">ABOUT</li>
+            <li className="py-4">CONTACT</li>
+          </ul>
+        </div>
+      )}
+    </header>
+  );
 }
